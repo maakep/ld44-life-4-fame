@@ -144,7 +144,8 @@ export class App extends React.Component<PropType, StateType> {
             if (parseInt(parts[1]) <= 9) {
               parts[1] = '0' + parts[1];
             }
-            const time = parts.join(':')
+            const time = parts.join(':');
+
             return (
               <div key={entry.name}>
                 <RowOuterWrapper>
@@ -155,10 +156,18 @@ export class App extends React.Component<PropType, StateType> {
                       </RowName>
                     </Row>
                     {entry.scores.slice(0, this.archivedHighscoreMax).map((score: Types.PlayerScore) => {
+                      const isGame = score.player.name.indexOf('ldjam.com/events/ludum-dare/44') !== -1;
+                      let name = score.player.name;
+                      if (isGame) {
+                        name = name.split('/').pop().replace(/-/g, ' ');
+                        name = name.charAt(0).toUpperCase() + name.slice(1);
+                      }
+                      const link = isGame ? score.player.name : `https://ldjam.com/users/${name}`;
+
                       return (
                         <Row key={score.player.ip + score.player.name}>
                           <RowScore>{score.highestScore}</RowScore>
-                          <RowName>{score.player.name}</RowName>
+                          <RowName><a target="_blank" href={link}>{name}</a></RowName>
                         </Row>
                       );
                     })
