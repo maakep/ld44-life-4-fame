@@ -4,6 +4,9 @@ import * as SocketIo from "socket.io";
 import Root from "./root";
 import * as Types from "./types";
 import Database from "object-to-file";
+
+const port = process.argv[2] || 1337;
+
 const db = new Database("data");
 
 const root: { root: string } = { root: Root };
@@ -113,8 +116,8 @@ app.get("/*.js", (req, res) => {
     res.sendFile(req.url, root);
 });
 
-http.listen(1337, () => {
-    console.log("listening on *:1337");
+http.listen(port, () => {
+    console.log("listening on *:" + port);
 });
 
 io.on("connection", (socket: SocketIo.Socket) => {
