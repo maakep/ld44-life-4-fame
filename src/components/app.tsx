@@ -126,13 +126,13 @@ export class App extends React.Component<PropType, StateType> {
             <h1>WELCOME TO <a target="_blank" href="https://ldjam.com/events/ludum-dare/44/life-4-fame">LIFE 4 FAME</a></h1>
             <p style={{ width: '600px', marginBottom: '50px' }}>
               In this game you trade your life for glory, or well... marketing. Glorious marketing!
-              Getting a good score means that you'll be in the top of the highscore, which means the top link to your game.
+              Getting a good score means that you will be in the top of the highscore, which means extraordinary market exposure! We're talking billions of clicks.
               <br />
               <br />
               <b style={{ fontSize: '20px' }}>INSTRUCTIONS</b>
               <br />
               <b>
-                - Click (or tap, if you're on your phone) the screen to collect points, if you stop clicking for 1.5 seconds the points are submitted.
+                - Click (or tap, if you are on your phone) the screen to collect points, if you stop clicking for 1.5 seconds the points are submitted.
               <br />
                 <br />
                 - Enter a link to your game below and the highscore will link to it.
@@ -145,7 +145,7 @@ export class App extends React.Component<PropType, StateType> {
                 <i>Example: TheRock1337</i>
                 <br />
                 <br />
-                - In game, swipe up to find highscore and other links
+                - In game, swipe up to find highscore and other links.
                 <br />
                 <br />
                 <br />
